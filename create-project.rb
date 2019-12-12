@@ -26,7 +26,9 @@ File.open("Gemfile", "w") { |file| file.puts "source 'https://rubygems.org'
 
 gem 'rspec'
 gem 'pry'"}
+File.open("README.md", "w") { |file| file.puts "# _#{input}_"}
 FileUtils.mv "Gemfile", "#{input}"
+FileUtils.mv "README.md", "#{input}"
 FileUtils.mv "#{input}.rb", "#{input}/lib"
 FileUtils.mv "#{input}_spec.rb", "#{input}/spec"
 print "Your Project Has Been Created!
