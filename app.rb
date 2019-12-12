@@ -1,9 +1,11 @@
 require 'fileutils'
+puts "##################################################################"
+puts "                    Ruby Project Creator"
+puts "##################################################################"
 puts "Enter the Name of the Project you Want to Create"
 input = gets.chomp.downcase.gsub(" ", '-')
 puts "Enter a Class Name"
 class_name = gets.chomp.capitalize
-
 FileUtils.mkdir_p "#{input}/lib"
 FileUtils.mkdir_p "#{input}/spec"
 File.open("#{input}_spec.rb","w") { |file| file.puts "require('rspec')
@@ -27,3 +29,5 @@ gem 'pry'"}
 FileUtils.mv "Gemfile", "#{input}"
 FileUtils.mv "#{input}.rb", "#{input}/lib"
 FileUtils.mv "#{input}_spec.rb", "#{input}/spec"
+print "Your Project Has Been Created!
+"
